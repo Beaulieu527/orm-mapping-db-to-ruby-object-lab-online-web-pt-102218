@@ -26,11 +26,11 @@ class Student
     sql = <<-SQL
       SELECT *
       FROM students
-      WHERE grade = 9;
+      WHERE grade = 9
     SQL
 
     DB[:conn].execute(sql, name).map do |row|
-      self.find_by_name(row[1])
+      find_by_name(row[1])
     end
   end
 
