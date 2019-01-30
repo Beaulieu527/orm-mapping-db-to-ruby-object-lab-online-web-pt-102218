@@ -75,13 +75,13 @@ class Student
     sql = <<-SQL
       SELECT *
       FROM students
-      WHERE grade = "10"
-      limit 1
+      WHERE grade = 10
+      LIMIT 1
     SQL
 
     DB[:conn].execute(sql,grade).map do |row|
       find_by_name(row[1])
-    end.first
+    end
   end
 
   def self.find_by_name(name)
