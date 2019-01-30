@@ -79,7 +79,7 @@ class Student
       LIMIT 1
     SQL
 
-    DB[:conn].execute(sql,grade).map do |row|
+    DB[:conn].execute(sql).map do |row|
       find_by_name(row[1])
     end
   end
