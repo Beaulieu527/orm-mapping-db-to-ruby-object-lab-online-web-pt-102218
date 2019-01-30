@@ -76,11 +76,11 @@ class Student
       SELECT *
       FROM students
       WHERE grade = 10
-      limit = 1
+      limit 1
     SQL
 
     DB[:conn].execute(sql).map do |row|
-      find_by_name(row)
+      find_by_name(row[1])
     end
   end
 
