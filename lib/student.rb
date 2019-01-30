@@ -81,7 +81,7 @@ class Student
 
     DB[:conn].execute(sql,grade).map do |row|
       find_by_name(row[1])
-    end
+    end.first
   end
 
   def self.find_by_name(name)
