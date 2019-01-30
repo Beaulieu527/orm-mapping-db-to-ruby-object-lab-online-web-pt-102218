@@ -80,7 +80,7 @@ class Student
     SQL
 
     DB[:conn].execute(sql).map do |row|
-      find_by_name(row)
+      self.new_from_db(row)
     end
   end
 
