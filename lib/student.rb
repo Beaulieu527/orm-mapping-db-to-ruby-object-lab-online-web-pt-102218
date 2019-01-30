@@ -30,8 +30,8 @@ class Student
     SQL
 
     DB[:conn].execute(sql).map do |row|
-      self.find_by_name(row[1])
-    end.first
+      find_by_name(row[1])
+    end
   end
 
   def self.find_by_name(name)
